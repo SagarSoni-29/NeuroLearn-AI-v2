@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLearn AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="landing-body-wrapper">
+
+    <div class="bg-glow-orb orb-1"></div>
+    <div class="bg-glow-orb orb-2"></div>
+
+    <div class="curtain-layer" id="curtainPanel">
+        <div class="curtain-center-box">
+            <h1 class="curtain-title">NeuroLearn AI</h1>
+            <p class="curtain-subtitle">Intelligent Personalized Study Companion</p>
+            <button class="action-btn neon-blue curtain-trigger-btn" onclick="triggerCurtainRise()">
+                Enter Experience
+            </button>
+        </div>
+    </div>
+
+    <div class="landing-surface-layer">
+        
+        <header class="top-navbar animate-fade-in">
+            <div class="nav-brand-logo">
+                <span>🧠</span> NeuroLearn AI
+            </div>
+            <div class="nav-auth-cluster">
+                <a href="/login" class="nav-pill-btn signin-pill">Login</a>
+                <a href="/signup" class="nav-pill-btn signup-pill-neon">Sign Up</a>
+            </div>
+        </header>
+
+        <main class="hero-showcase-container">
+            <h1 class="hero-headline text-gradient animate-slide-up">
+                Revolutionize Your Learning with AI
+            </h1>
+            
+            <div class="feature-pills-row animate-slide-up" style="animation-delay: 0.15s;">
+                <span class="feature-tag">💬 AI Chatbot</span>
+                <span class="feature-tag">🎯 Quiz Generator</span>
+                <span class="feature-tag">📝 Notes Summarizer</span>
+                <span class="feature-tag">📂 PDF Intelligence</span>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function triggerCurtainRise() {
+            const curtain = document.getElementById("curtainPanel");
+            curtain.classList.add("slide-up-animate");
+            
+            // Completely tear down layer from DOM pool after transition completes
+            setTimeout(() => {
+                curtain.style.display = "none";
+            }, 850);
+        }
+    </script>
+</body>
+</html>

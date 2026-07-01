@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLearn AI - Student Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+    <!-- Authentication Container (Signup specific layout) -->
+    <div class="auth-container animate-fade-in">
+        
+        <!-- Left Panel (Logo and Greeting) -->
+        <div class="left-panel center-align">
+            <img src="{{ url_for('static', filename='brain_logo.png') }}" alt="NeuroLearn Logo" class="auth-logo">
+            <h2>Create an account</h2>
+            <p>Hey, enter your details to create your personalized study hub.</p>
+        </div>
+
+        <!-- Right Panel (Signup Form) -->
+        <div class="right-panel">
+            <form method="POST" action="/signup">
+                <div class="input-group">
+                    <label for="username">Create Username</label>
+                    <input type="text" name="username" placeholder="New Username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" name="password" placeholder="New Password" required>
+                </div>
+
+                <button class="action-btn neon-blue log-in-btn" type="submit">Create Account</button>
+            </form>
+            
+            <p class="auth-switch">Already have account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

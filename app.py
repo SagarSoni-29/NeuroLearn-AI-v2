@@ -21,7 +21,7 @@ app.secret_key = os.getenv("SECRET_KEY")
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # Upload Folder
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = "/tmp"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Helpers

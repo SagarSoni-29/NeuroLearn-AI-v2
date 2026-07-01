@@ -8,8 +8,8 @@ from PyPDF2 import PdfReader
 from docx import Document
 from werkzeug.utils import secure_filename
 from uuid import uuid4
-from services.dynamodb_service import create_user, get_user, save_quiz, get_user_quizzes
-from services.dynamodb_service import update_xp , update_quiz_count, get_progress, init_progress, update_login_streak
+from dynamodb_service import create_user, get_user, save_quiz, get_user_quizzes
+from dynamodb_service import update_xp , update_quiz_count, get_progress, init_progress, update_login_streak
 
 # Load ENV
 load_dotenv()

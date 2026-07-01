@@ -20,13 +20,6 @@ app.secret_key = os.getenv("SECRET_KEY")
 # GROQ Config
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# User File
-USER_FILE = "users.json"
-
-if not os.path.exists(USER_FILE):
-    with open(USER_FILE, "w") as f:
-        json.dump({}, f)
-
 # Upload Folder
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)

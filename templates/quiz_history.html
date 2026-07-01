@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLearn AI - Quiz History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard-subpage-body">
+
+    <div class="container subpage-container animate-fade-in">
+        
+        <header class="subpage-header">
+            <h1>📝 Quiz History Log</h1>
+            <a href="/dashboard" class="btn back-to-dash-btn">← Back to Dashboard</a>
+        </header>
+
+        <div class="quiz-stream-wrapper">
+            {% if quizzes %}
+                {% for quiz in quizzes %}
+                    <div class="quiz-history-card">
+                        <div class="quiz-card-meta">
+                            <span class="quiz-topic-tag">🎯 Topic: {{ quiz.topic }}</span>
+                        </div>
+                        <div class="quiz-card-body">
+                            <p class="raw-quiz-content">{{ quiz.quiz_content }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="empty-placeholder-box">
+                    <p>No quizzes found in history. Head back to your dashboard tools to generate one!</p>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+</html>

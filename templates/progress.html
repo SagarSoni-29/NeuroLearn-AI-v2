@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLearn AI - Learning Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard-subpage-body">
+
+    <div class="container subpage-container animate-fade-in">
+        
+        <header class="subpage-header">
+            <h1>📊 Learning Progress</h1>
+            <a href="/dashboard" class="btn back-to-dash-btn">← Back to Dashboard</a>
+        </header>
+
+        <div class="metrics-grid">
+            <div class="metric-glass-card">
+                <span class="metric-icon">✨</span>
+                <div class="metric-info">
+                    <h3>XP Earned</h3>
+                    <p class="metric-value">{{ progress.xp }}</p>
+                </div>
+            </div>
+
+            <div class="metric-glass-card">
+                <span class="metric-icon">🚀</span>
+                <div class="metric-info">
+                    <h3>Current Level</h3>
+                    <p class="metric-value">{{ progress.level }}</p>
+                </div>
+            </div>
+
+            <div class="metric-glass-card">
+                <span class="metric-icon">🔥</span>
+                <div class="metric-info">
+                    <h3>Daily Streak</h3>
+                    <p class="metric-value">{{ progress.streak }} Days</p>
+                </div>
+            </div>
+
+            <div class="metric-glass-card">
+                <span class="metric-icon">📝</span>
+                <div class="metric-info">
+                    <h3>Quizzes Cleared</h3>
+                    <p class="metric-value">{{ progress.quizzes_taken }}</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="badges-showcase-section">
+            <h2>🏆 Unlocked Badges</h2>
+            <div class="badges-flex-row">
+                {% if badges %}
+                    {% for badge in badges %}
+                        <div class="badge-pill">
+                            <span class="badge-text">{{ badge }}</span>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty-placeholder">
+                        <p>Complete quizzes and log in daily to earn your first badge!</p>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
